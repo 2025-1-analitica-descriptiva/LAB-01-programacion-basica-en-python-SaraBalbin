@@ -15,3 +15,22 @@ def pregunta_12():
     {'A': 177, 'B': 187, 'C': 114, 'D': 136, 'E': 324}
 
     """
+    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = [z.replace("\n", "") for z in archivo]
+    archivo = [z.split("\t") for z in archivo]
+
+    letras = sorted({fila[0] for fila in archivo})
+    col5 = [[col[0],col[4].split(",")] for col in archivo]
+
+    for fila in col5:
+        for elemento in range(len(fila[1])):
+            fila[1][elemento] = int(fila[1][elemento][4:])
+        fila[1] = sum(fila[1])
+    
+    dicc = {letra: 0 for letra in letras}
+
+    for elemento in col5:
+        dicc[elemento[0]] += elemento[1]
+
+    return dicc
+

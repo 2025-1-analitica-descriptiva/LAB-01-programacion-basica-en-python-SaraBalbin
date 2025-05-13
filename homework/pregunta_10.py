@@ -20,3 +20,13 @@ def pregunta_10():
 
 
     """
+    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = [z.replace("\n", "") for z in archivo]
+    archivo = [z.split("\t") for z in archivo]
+    columnas = [[col[0], col[3].split(","), col[4].split(",") ] for col in archivo]
+
+    x = []
+    for elemento in columnas:
+        x.append((elemento[0], len(elemento[1]), len(elemento[2])))
+
+    return x

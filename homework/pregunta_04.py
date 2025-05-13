@@ -26,3 +26,12 @@ def pregunta_04():
      ('12', 3)]
 
     """
+    from collections import Counter
+    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = [z.replace("\n", "").split("\t") for z in archivo]
+
+    fechas = [fila[2].split('-')[1] for fila in archivo]
+    fechas = dict(Counter(fechas))
+    final = sorted(fechas.items())
+
+    return final

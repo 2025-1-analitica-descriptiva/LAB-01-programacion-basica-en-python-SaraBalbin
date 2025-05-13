@@ -26,3 +26,18 @@ def pregunta_06():
      ('jjj', 5, 17)]
 
     """
+    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = [z.replace("\n", "") for z in archivo]
+    archivo = [z.split("\t")[4].split(",") for z in archivo]
+    letras = sorted({palabra[:3] for diccionario in archivo for palabra in diccionario})
+    letras = {letra: [] for letra in letras}
+
+    for i in archivo:
+        for elemento in i:
+            letras[elemento[:3]].append(int(elemento[4:]))
+
+    x = []
+    for i in letras:
+        x.append((i, min(letras[i]), max(letras[i])))
+
+    return x

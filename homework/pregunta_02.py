@@ -15,3 +15,14 @@ def pregunta_02():
     [('A', 8), ('B', 7), ('C', 5), ('D', 6), ('E', 14)]
 
     """
+    from collections import Counter
+
+    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = [z.replace("\n", "").split("\t") for z in archivo]
+    letras = [fila[0] for fila in archivo]
+    cantidad = dict(Counter(letras))
+    final = sorted(cantidad.items())
+
+    return final
+
+

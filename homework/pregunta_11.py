@@ -16,3 +16,16 @@ def pregunta_11():
 
 
     """
+    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = [z.replace("\n", "") for z in archivo]
+    archivo = [z.split("\t") for z in archivo]
+    letras = sorted({letra for col in archivo for letra in col[3].split(",")})
+    
+    final = {letra:0 for letra in letras}
+
+    for i in archivo:
+        l = i[3].split(",")
+        for elemento in l:
+            final[elemento] += int(i[1])
+    
+    return final
