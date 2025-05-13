@@ -32,5 +32,5 @@ def pregunta_12():
     for elemento in col5:
         dicc[elemento[0]] += elemento[1]
 
-    return dicc
+    return dicc 
 
