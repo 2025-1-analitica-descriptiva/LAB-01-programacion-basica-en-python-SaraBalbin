@@ -26,7 +26,7 @@ def pregunta_09():
     """
 
     from collections import Counter
-    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = open('files/input/data.csv', 'r').readlines()
     archivo = [z.replace("\n", "") for z in archivo]
     archivo = [z.split("\t")[4].split(",") for z in archivo]
     letras = sorted(palabra[:3] for diccionario in archivo for palabra in diccionario)

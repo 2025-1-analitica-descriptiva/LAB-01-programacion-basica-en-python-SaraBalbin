@@ -15,7 +15,7 @@ def pregunta_05():
     [('A', 9, 2), ('B', 9, 1), ('C', 9, 0), ('D', 8, 3), ('E', 9, 1)]
 
     """
-    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = open('files/input/data.csv', 'r').readlines()
     archivo = [z.replace("\n", "").split("\t") for z in archivo]
 
     letras = sorted({fila[0] for fila in archivo})

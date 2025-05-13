@@ -14,7 +14,7 @@ def pregunta_01():
     214
 
     """
-    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = open('files/input/data.csv', 'r').readlines()
     archivo = [z.replace("\n", "").split("\t") for z in archivo]
     suma = [int(fila[1]) for fila in archivo]
     return sum(suma)

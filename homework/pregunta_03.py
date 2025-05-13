@@ -15,7 +15,7 @@ def pregunta_03():
     [('A', 53), ('B', 36), ('C', 27), ('D', 31), ('E', 67)]
 
     """
-    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = open('files/input/data.csv', 'r').readlines()
     archivo = [z.replace("\n", "").split("\t") for z in archivo]
     letrasNumeros = [(fila[0], int(fila[1])) for fila in archivo]
     letrasSuma = {fila[0]:0 for fila in archivo}

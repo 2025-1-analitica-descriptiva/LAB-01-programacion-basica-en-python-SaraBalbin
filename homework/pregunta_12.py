@@ -15,7 +15,7 @@ def pregunta_12():
     {'A': 177, 'B': 187, 'C': 114, 'D': 136, 'E': 324}
 
     """
-    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = open('files/input/data.csv', 'r').readlines()
     archivo = [z.replace("\n", "") for z in archivo]
     archivo = [z.split("\t") for z in archivo]
 

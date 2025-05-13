@@ -17,7 +17,7 @@ def pregunta_02():
     """
     from collections import Counter
 
-    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = open('files/input/data.csv', 'r').readlines()
     archivo = [z.replace("\n", "").split("\t") for z in archivo]
     letras = [fila[0] for fila in archivo]
     cantidad = dict(Counter(letras))

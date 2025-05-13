@@ -16,7 +16,7 @@ def pregunta_11():
 
 
     """
-    archivo = open('files\input\data.csv', 'r').readlines()
+    archivo = open('files/input/data.csv', 'r').readlines()
     archivo = [z.replace("\n", "") for z in archivo]
     archivo = [z.split("\t") for z in archivo]
     letras = sorted({letra for col in archivo for letra in col[3].split(",")})
